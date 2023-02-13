@@ -2,72 +2,129 @@
 <html lang="en">
   <head>
     ...
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-babia-components/dist/aframe-babia-components.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component@1.0.0/dist/aframe-environment-component.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+   
+        <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+        <script
+                src="https://unpkg.com/aframe-environment-component@1.2.0/dist/aframe-environment-component.min.js"></script>
+        <script
+                src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
+        <script
+                src="https://unpkg.com/aframe-geometry-merger-component/dist/aframe-geometry-merger-component.min.js"></script>
+        <script src="https://rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
+        <script src="https://supereggbert.github.io/aframe-htmlembed-component/dist/build.js"></script>
+        <script src="dist/aframe-lounge-component.min.js"></script>
+        <script src="../../../dist/aframe-babia-components.js"></script>
+        <link rel="stylesheet" href="../../assets/gitlab-corner.css">
+        <style>
+                h1 {
+                        color: #AAAAAA;
+                        font-family: 'Archivo', sans-serif;
+                        font-size: 45px;
+                        text-align: center;
+                        text-shadow: black 0.1em 0.1em 0.2em
+                }
+
+                p {
+                        color: #444444;
+                        font-family: 'Archivo', sans-serif;
+                        font-size: 35px;
+                        text-align: center;
+                        text-shadow: #AAAAAA 0.1em 0.1em 0.2em
+                }
+        </style>
+
+    
     
   </head>  
-  <body>
-    <a-scene>
-        <!-- Environment -->
-         <a-entity environment ></a-entity>
-        <!-- Light -->
-         <a-light type="point" intensity="1" position="-10 20 30"></a-light>
+  <body>  
+        <a-scene background="color: #A8F3FF" id="AframeScene">
+        <a-entity environment></a-entity>
+        <a-light type="point" intensity="1" position="-10 20 30"></a-light>
+ 
+        <a-assets>
+            <a-asset-item id="optimerBoldFont" src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json"></a-asset-item>
+        </a-assets>
+
+       <!-- Pie chart -->
+        <a-entity babia-pie='size: points; legend: true; palette: sunset; 
+
+        data: [{"key":"Nevera","points":31},{"key":"Lavadora","points":14},{"key":"Lavavajillas","points":7},{"key":"Cocina Electrica","points":10},{"key":"TV","points":13},{"key":"Aire Acondicionado","points":4},{"key":"Calefaccion","points":8},{"key":"Resto","points":13}]'
+        
+        position="0 5 15" rotation="90 0 0">
+        </a-entity>
+          
+          
+      <a-entity id="piedescription" position="2 3 16" rotation="-30 0 0">
+                        <a-box src="#floor" height="2" width="2" depth="0.1" position="0 0 0"></a-box>
+                        <a-box src="#metalic" height="1.8" width="1.8" depth="0.05" position="0 0 0.05"></a-box>
+                        <a-entity htmlembed position="0 0.1 0.1" style="width: 380px; height: 400px;">
+                           <h1>Ranking de consumo de electrodomesticos</h1>
+                                <p> Consulta cuanto consume cada aparato en porcentaje </p>                        
+                                
+    
+                        </a-entity>
+                </a-entity>
+
       
-        <!-- Camera -->
-        <a-entity movement-controls="fly: true" position="0 5 20">
+          <!-- Precio anual barras -->
+
+        <a-entity babia-bars='legend: true; axis: true; palette: commerce; 
+               
+        data: [              
+        {"x_axis":"Nevera","height":198},
+        {"x_axis":"Vitroceramica","height":162},
+        {"x_axis":"Lavadora","height":79},
+        {"x_axis":"Television","height":79},
+        {"x_axis":"Lavavajillas","height":75},
+        {"x_axis":"Horno","height":72},
+        {"x_axis":"Microondas","height":46}
+        ]'
+  
+        position="-30 0 5" rotation="0 0 0"></a-entity>
+          
+           <a-entity id="piedescription" position="-16 2 9" rotation="-30 0 0">
+                        <a-box src="#floor" height="2" width="2" depth="0.1" position="0 0 0"></a-box>
+                        <a-box src="#metalic" height="1.8" width="1.8" depth="0.05" position="0 0 0.05"></a-box>
+                        <a-entity htmlembed position="0 0.1 0.1" style="width: 380px; height: 400px;">
+                           <h1>Precio anual del consumo electrodomesticos</h1>
+                                <p> Consulta el precio del consumo anual de cada aparato </p>                        
+             </a-entity>
+                </a-entity>
+
+                <!-- Evolucion de precio barras -->
+          
+           <a-entity babia-bars='legend: true; axis: true; palette: commerce;  
+                  
+        data: [              
+        {"x_axis":"2000","height":31},
+        {"x_axis":"2005","height":54},
+        {"x_axis":"2010","height":37},
+        {"x_axis":"2015","height":50},
+        {"x_axis":"2020","height":34},
+        {"x_axis":"2022","height":89}]'
+  
+        position="20 0 5" rotation="0 0 0"></a-entity>
+          
+          
+<a-entity id="piedescription" position="18 2 9" rotation="-30 0 0">
+    <a-box src="#floor" height="2" width="2" depth="0.1" position="0 0 0"></a-box>
+    <a-box src="#metalic" height="1.8" width="1.8" depth="0.05" position="0 0 0.05"></a-box>
+    <a-entity htmlembed position="0 0.1 0.1" style="width: 380px; height: 400px;">
+        <h1>Evolucion del precio de la luz </h1>
+        <p> Consulta la evolucion del precio de la luz edurante los anos (en euros) </p>                        
+             </a-entity>
+                </a-entity>
+
+        <a-entity movement-controls="fly: true" position="-3 5 20">
             <a-entity camera position="0 0 0" look-controls></a-entity>
             <a-entity cursor="rayOrigin:mouse"></a-entity>
             <a-entity laser-controls="hand: right"></a-entity>
         </a-entity>
 
-        <a-entity babia-pie='legend: true; palette: blues; key:model; size: sales;
-    data:[{"model": "leon", "motor": "electric", "color": "red",
-        "doors": 5, "sales": 10},
-        {"model": "ibiza", "motor": "electric", "color": "white", 
-        "doors": 3, "sales": 15},
-        {"model": "cordoba", "motor": "diesel", "color": "black", 
-        "doors": 5, "sales": 3},
-        {"model": "toledo", "motor": "diesel", "color": "white", 
-        "doors": 5, "sales": 18},
-        {"model": "altea", "motor": "diesel", "color": "red", 
-        "doors": 5, "sales": 4},
-        {"model": "arosa", "motor": "electric", "color": "red", 
-        "doors": 3, "sales": 12},
-        {"model": "alhambra", "motor": "diesel", "color": "white", 
-        "doors": 5, "sales": 5},
-        {"model": "600", "motor": "gasoline", "color": "yellow", 
-        "doors": 3, "sales": 20},
-        {"model": "127", "motor": "gasoline", "color": "white", 
-        "doors": 5, "sales": 2},
-        {"model": "panda", "motor": "gasoline", "color": "black", 
-        "doors": 3, "sales": 13}]'
-    position="-20 2 0" rotation="90 0 0" scale="2 2 2"></a-entity>
-
-    <a-entity babia-pie='legend: true; palette: blues; key:model; size: sales;
-    data:[{"model": "leon", "motor": "electric", "color": "red",
-        "doors": 5, "sales": 10},
-        {"model": "ibiza", "motor": "electric", "color": "white", 
-        "doors": 3, "sales": 15},
-        {"model": "cordoba", "motor": "diesel", "color": "black", 
-        "doors": 5, "sales": 3},
-        {"model": "toledo", "motor": "diesel", "color": "white", 
-        "doors": 5, "sales": 18},
-        {"model": "altea", "motor": "diesel", "color": "red", 
-        "doors": 5, "sales": 4},
-        {"model": "arosa", "motor": "electric", "color": "red", 
-        "doors": 3, "sales": 12},
-        {"model": "alhambra", "motor": "diesel", "color": "white", 
-        "doors": 5, "sales": 5},
-        {"model": "600", "motor": "gasoline", "color": "yellow", 
-        "doors": 3, "sales": 20},
-        {"model": "127", "motor": "gasoline", "color": "white", 
-        "doors": 5, "sales": 2},
-        {"model": "panda", "motor": "gasoline", "color": "black", 
-        "doors": 3, "sales": 13}]'
-    position="-10 5 0" rotation="90 0 0" scale="2 2 2"></a-entity>
-
-    </a-scene>
+     </a-scene>
   </body>
 </html>
