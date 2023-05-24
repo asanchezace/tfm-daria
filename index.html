@@ -1,0 +1,297 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>A-Frame Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-babia-components/dist/aframe-babia-components.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.0.0/dist/aframe-environment-component.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+   
+        <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+        <script
+                src="https://unpkg.com/aframe-environment-component@1.2.0/dist/aframe-environment-component.min.js"></script>
+        <script
+                src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
+        <script
+                src="https://unpkg.com/aframe-geometry-merger-component/dist/aframe-geometry-merger-component.min.js"></script>
+        <script src="https://rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
+        <script src="https://supereggbert.github.io/aframe-htmlembed-component/dist/build.js"></script>
+        <script src="dist/aframe-lounge-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-babia-pie-component/dist/aframe-babia-pie-component.min.js"></script>
+
+        <script src="../../../dist/aframe-babia-components.js"></script>
+        <link rel="stylesheet" href="../../assets/gitlab-corner.css">
+        
+  </head>
+  <body>
+    <a-scene cursor="rayOrigin: mouse">
+<!-- Background -->
+      <a-plane src="https://cdn.glitch.global/6615d83d-747e-4d8c-a8a6-6704df148cfa/MicrosoftTeams-image%20(1).png?v=1684942310924" height="1500" width="1500" rotation="-90 0 0" position="20 -3 -12" ></a-plane>
+
+      <!-- wall right--> 
+       <a-box  src="https://raw.githubusercontent.com/oluisjuan/LongCovid-Pilot/master/material/floor-texture.jpg" depth="9.8" height="3" width="0.3" position="20 -0.1 -12" rotation="0 0 0" color="#FFDEAD"></a-box>
+      
+      <!-- wall front--> 
+        <a-box src="https://raw.githubusercontent.com/oluisjuan/LongCovid-Pilot/master/material/floor-texture.jpg" depth="6.7" height="3" width="0.3" position="16.5 -0.1 -7" rotation="0 90 0" color="#FFDEAD"></a-box>
+      
+      <!-- wall further--> 
+       <a-box src="https://raw.githubusercontent.com/oluisjuan/LongCovid-Pilot/master/material/floor-texture.jpg" depth="6.7" height="3" width="0.3" position="16.6 -0.1 -17" rotation="0 90 0" color="#FFDEAD"></a-box>
+      
+          <!-- wall left short--> 
+    
+       <a-box  src="https://raw.githubusercontent.com/oluisjuan/LongCovid-Pilot/master/material/floor-texture.jpg" depth="5.5" height="3" width="0.3" position="13 -0.1 -14.3" rotation="0 0 0" color="#FFDEAD"></a-box>
+      
+      <!-- floor--> 
+        <a-box src="https://raw.githubusercontent.com/oluisjuan/LongCovid-Pilot/master/material/floor-texture.jpg" depth="10.3" height="0" width="7.3" position="16.3 -1.5 -11.9" rotation="0 0 0" ></a-box>
+    
+ 
+        <!-- room--> 
+       <a-gltf-model 
+     position="13.2 -1.5 -6.5" rotation="0 185 0" src="https://cdn.glitch.me/064bcac3-234b-4ab7-a097-23acc713f4dd/living_completo_di_cucina_a_isola.glb?v=1677002094268" depth="2" height="1.5" width="0.5">
+      </a-gltf-model>
+      
+         <!-- washing--> 
+      
+         <a-gltf-model 
+     position="10.2 -1.4 -11.2" rotation="0 0 0" src="https://cdn.glitch.global/064bcac3-234b-4ab7-a097-23acc713f4dd/lods_-_samsung-7kg-ww70t4020cx.glb?v=1676984297654" >
+      </a-gltf-model>
+      
+    
+       <!-- tv--> 
+      
+         <a-gltf-model 
+     position="1.8 -0.4 -6.5" rotation="0 180 0" src="https://cdn.glitch.global/064bcac3-234b-4ab7-a097-23acc713f4dd/lcd_tv.glb?v=1677162683330" >
+      </a-gltf-model>
+      
+  <!-- boton 1-->
+  <a-entity position="0 0 -2">
+<a-plane color="white" width="1.4" height="1" position="10.2 -1.4 -11.2" visible="false"></a-plane>    <a-text id="text1" value="Consumo mensual - 20 kWh
+    Precio mensual - 6,60 euros" color="black" position="10.2 0.1 -9.2" align="center" visible="false"></a-text>
+    <a-entity id="toggle-button" geometry="primitive: plane; width: 0.2; height: 0.2" material="color: #333" position="10.2 -0.4 -9.2"  cursor-listener></a-entity>
+  </a-entity>
+
+  <!-- boton 2--> 
+  <a-entity position="0 0 -2">
+    <a-plane color="white" width="1.4" height="1" position="1.8 0.9 -4.5" rotation="0 180 0" visible="false"></a-plane>
+    <a-text id="text2" value="Consumo mensual - 22 kWh
+    Precio mensual - 6,60 euros" color="black" position="1.8 0.9 -4.5" align="center" rotation="0 180 0" visible="false"></a-text>
+    <a-entity id="toggle-button2" geometry="primitive: plane; width: 0.2; height: 0.2" material="color: #333" position="0.5 0.4 -4.5" rotation="0 180 0" cursor-listener2></a-entity>
+  </a-entity>
+      
+      <!-- boton 3--> 
+  <a-entity position="0 0 -2">
+    <a-plane color="white" width="1.4" height="1" position="9.1 1 -4.5" rotation="0 180 0" visible="false"></a-plane>
+    <a-text id="text2" value="Consumo mensual - 55 kWh
+    Precio mensual - 16,50 euros" color="black" position="9.1 1 -4.5" align="center" rotation="0 180 0" visible="false"></a-text>
+    <a-entity id="toggle-button3" geometry="primitive: plane; width: 0.2; height: 0.2" material="color: #333" position="8.7 1.0 -4.5" rotation="0 180 0" cursor-listener3></a-entity>
+  </a-entity>
+      
+    <!-- boton 4--> 
+  <a-entity position="0 0 -2">
+    <a-plane color="white" width="1.4" height="1" position="11.1 1.0 -4.5" rotation="0 180 0" visible="false"></a-plane>
+    <a-text id="text2" value="Consumo mensual - 45 kWh
+    Precio mensual - 13,50 euros" color="black" position="11.1 1 -4.5" align="center" rotation="0 180 0" visible="false"></a-text>
+    <a-entity id="toggle-button4" geometry="primitive: plane; width: 0.2; height: 0.2" material="color: #333" position="11.4 -0.3 -4.5" rotation="0 180 0" cursor-listener4></a-entity>
+  </a-entity>
+      
+   <!-- boton 5--> 
+  <a-entity position="0 0 -2">
+    <a-plane color="white" width="1.4" height="1" position="11.8 1.0 -4.5" rotation="0 180 0" visible="false"></a-plane>
+    <a-text id="text2" value="Consumo mensual - 20 kWh
+    Precio mensual - 6 euros" color="black" position="11.8 1.0 -4.5" align="center" rotation="0 180 0" visible="false"></a-text>
+    <a-entity id="toggle-button5" geometry="primitive: plane; width: 0.2; height: 0.2" material="color: #333" position=" 12.4 0.4 -5.1" rotation="0 180 0" cursor-listener5></a-entity>
+  </a-entity>
+      
+      
+        <!-- boton 6 grafic-->
+      
+
+
+    <a-plane id="toggle-button6" position="19.4 -0.8 -8.1" rotation="0 -90 -90"  visible="true" height="1.4" width="1" depth="2" cursor-listener6 src="https://cdn.glitch.global/b76286d7-cabc-4ea4-bb59-744a26fa1bfc/consumo.png?v=1680086258637"></a-plane>
+
+      
+      <a-entity 
+                 id="grafica" 
+                babia-pie='size: points; legend: true; palette: sunset; 
+
+        data: [{"key":"Nevera","points":31},{"key":"Lavadora","points":14},{"key":"Lavavajillas","points":7},{"key":"Cocina Electrica","points":10},{"key":"TV","points":13},{"key":"Aire Acondicionado","points":4},{"key":"Calefaccion","points":8},{"key":"Resto","points":13}]'
+        
+        position="19.1 0 -9.5" rotation="90 90 0"  scale="0.7 0.7 0.7"
+                visible="false">
+        </a-entity>
+      
+      
+        <!-- boton 7 grafic-->
+      
+   
+        <a-plane id="toggle-button7" position="19.6 -0.9 -10.6" rotation="0 -90 -90"  visible="true" height="1.6" width="1.1" depth="2" cursor-listener7 src="https://cdn.glitch.global/b76286d7-cabc-4ea4-bb59-744a26fa1bfc/precio%20anual.png?v=1680087026281"></a-plane>
+
+      
+      
+      <a-entity 
+                 id="grafica1" 
+                babia-bars='legend: true; axis: true; palette: commerce; 
+        data: [              
+        {"x_axis":"Nevera","height":198},
+        {"x_axis":"Vitroceramica","height":162},
+        {"x_axis":"Lavadora","height":79},
+        {"x_axis":"Television","height":79},
+        {"x_axis":"Lavavajillas","height":75},
+        {"x_axis":"Horno","height":72},
+        {"x_axis":"Microondas","height":46}
+        ]'
+        position="19.1 -1 -11.6" rotation="0 270 0" scale="0.3 0.3 0.3"
+
+                visible="false">
+        </a-entity>
+      
+        <!-- boton 8 grafic-->
+      
+  
+  <a-plane id="toggle-button8" position="19.6 -0.9 -13.8" rotation="0 -90 -90"  visible="true" height="1.6" width="1.1" depth="2"  cursor-listener8 src="https://cdn.glitch.global/b76286d7-cabc-4ea4-bb59-744a26fa1bfc/%D0%91%D0%B5%D0%B7%D1%8B%D0%BC%D1%8F%D0%BD%D0%BD%D1%8B%D0%B9-1.png?v=1680087019775" height="1.5" width="1.5"></a-plane>
+
+      
+      
+      <a-entity 
+                 id="grafica2" 
+                babia-bars='legend: true; axis: true; palette: commerce; 
+               
+        data: [              
+        {"x_axis":"2000","height":31},
+        {"x_axis":"2005","height":54},
+        {"x_axis":"2010","height":37},
+        {"x_axis":"2015","height":50},
+        {"x_axis":"2020","height":34},
+        {"x_axis":"2022","height":89}]'
+                
+        position="19.1 -1 -14" rotation="0 270 0" scale="0.3 0.3 0.3"
+
+                visible="false">
+        </a-entity>
+      
+          <!-- boton 9 cafetera--> 
+  <a-entity position="0 0 -2">
+    <a-plane color="white" width="1.4" height="1" position="9.1 1.0 -4.5" rotation="0 180 0" visible="false"></a-plane>
+    <a-text id="text2" value="Consumo mensual - 15 kWh
+    Precio mensual - 3,60 euros" color="black" position="11.1 1 -4.5" align="center" rotation="0 180 0" visible="false"></a-text>
+    <a-entity id="toggle-button4" geometry="primitive: plane; width: 0.2; height: 0.2" material="color: #333" position="10.2 -0.3 -4.5" rotation="0 180 0" cursor-listener9></a-entity>
+  </a-entity>
+      
+            
+     <a-plane  position="17 -0.1 -16.8" rotation="0 0 0" height="2.7" width="3.5" depth="2" src="https://cdn.glitch.global/b76286d7-cabc-4ea4-bb59-744a26fa1bfc/grafic1.png?v=1680254494287"></a-plane>
+
+      
+         <a-plane  position="13.2 -0.1 -13.8" rotation="0 90 0" height="2.7" width="2.8" depth="2.3" src="https://cdn.glitch.global/b76286d7-cabc-4ea4-bb59-744a26fa1bfc/grafic.png?v=1680254490492"></a-plane>
+  
+      
+      
+      <!--Prueba Alberto-->
+      
+       <!-- boton 7 grafic-->
+
+         <a-box id="toggle-button7" position="19.8 -0.9 -10.6" rotation="0 -90 -90"  visible="false" height="1.6" width="1.1" depth="2" cursor-listener7 color="#000000"></a-box>
+      
+       <!-- boton 8 grafic-->
+
+         <a-box id="toggle-button8" position="19.6 -0.9 -13.8" rotation="0 -90 -90"  visible="false" height="1.6" width="1.1" depth="2"  cursor-listener8 color="#000000"></a-box>
+
+</a-scene>
+
+<script>
+  AFRAME.registerComponent('cursor-listener', {
+    init: function () {
+      var text = this.el.parentElement.querySelector('a-text');
+      var toggleButton = this.el;
+      toggleButton.addEventListener('click', function (evt) {
+        text.setAttribute('visible', !text.getAttribute('visible'));
+      });
+    }
+  });
+
+  AFRAME.registerComponent('cursor-listener2', {
+    init: function () {
+      var text = this.el.parentElement.querySelector('a-text');
+      var toggleButton = this.el;
+      toggleButton.addEventListener('click', function (evt) {
+        text.setAttribute('visible', !text.getAttribute('visible'));
+      });
+    }
+  });
+  
+   AFRAME.registerComponent('cursor-listener3', {
+    init: function () {
+      var text = this.el.parentElement.querySelector('a-text');
+      var toggleButton = this.el;
+      toggleButton.addEventListener('click', function (evt) {
+        text.setAttribute('visible', !text.getAttribute('visible'));
+      });
+    }
+  });
+  AFRAME.registerComponent('cursor-listener4', {
+    init: function () {
+      var text = this.el.parentElement.querySelector('a-text');
+      var toggleButton = this.el;
+      toggleButton.addEventListener('click', function (evt) {
+        text.setAttribute('visible', !text.getAttribute('visible'));
+      });
+    }
+  });
+    AFRAME.registerComponent('cursor-listener5', {
+    init: function () {
+      var text = this.el.parentElement.querySelector('a-text');
+      var toggleButton = this.el;
+      toggleButton.addEventListener('click', function (evt) {
+        text.setAttribute('visible', !text.getAttribute('visible'));
+      });
+    }
+  });
+  
+  AFRAME.registerComponent('cursor-listener6', {
+  init: function () {
+    var text = document.querySelector('#text-to-toggle');
+    var toggleButton = this.el;
+    toggleButton.addEventListener('click', function (evt) {
+      var grafica = document.querySelector('#grafica');
+      grafica.setAttribute('visible', !grafica.getAttribute('visible'));
+      text.setAttribute('visible', !text.getAttribute('visible'));
+    });
+  }
+});
+  AFRAME.registerComponent('cursor-listener7', {
+  init: function () {
+    var text = document.querySelector('#text-to-toggle');
+    var toggleButton = this.el;
+    toggleButton.addEventListener('click', function (evt) {
+      var grafica1 = document.querySelector('#grafica1');
+      grafica1.setAttribute('visible', !grafica1.getAttribute('visible'));
+      text.setAttribute('visible', !text.getAttribute('visible'));
+    });
+  }
+});
+    AFRAME.registerComponent('cursor-listener8', {
+  init: function () {
+    var text = document.querySelector('#text-to-toggle');
+    var toggleButton = this.el;
+    toggleButton.addEventListener('click', function (evt) {
+      var grafica2 = document.querySelector('#grafica2');
+      grafica2.setAttribute('visible', !grafica2.getAttribute('visible'));
+      text.setAttribute('visible', !text.getAttribute('visible'));
+    });
+  }
+});
+  AFRAME.registerComponent('cursor-listener9', {
+    init: function () {
+      var text = this.el.parentElement.querySelector('a-text');
+      var toggleButton = this.el;
+      toggleButton.addEventListener('click', function (evt) {
+        text.setAttribute('visible', !text.getAttribute('visible'));
+      });
+    }
+  });
+  
+</script>
+
+  </body>
+</html>
